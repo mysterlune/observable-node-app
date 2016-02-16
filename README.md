@@ -25,7 +25,7 @@ Write a REPL into your app so you can punch in and observe the runtime logging.
 Build an API into your app that exposes error data -- or any other data you wish to expose to your monitoring.
 
 ##Bunyan
-`node-bunyan` is a logging utility that provides JSON 
+`node-bunyan` is a logging utility that provides JSON
 
 Some features of Bunyan:
 
@@ -45,7 +45,7 @@ $> man dtrace
 
 ##Restify
 
-Native Bunyan support: 
+Native Bunyan support:
 
 Request Capture Stream: captures all logging records at all levels in array buffer in memory.
 
@@ -54,3 +54,18 @@ When `restify` hits an error, it dumps all the context logs to the error log.
 Audit Logs: Logging not only of headers, body, etc., but also request handlers and associated duration of execution.
 
 Scoped Child Loggers: In the context of a given request, a UUID is decorated with each execution throughout the request chain of handlers. So at any point, this is a "trace-id" that can be searched in logs.
+
+## Flame Graphs
+
+This post by [Brendan Gregg](http://www.brendangregg.com/blog/2014-09-17/node-flame-graphs-on-linux.html) helps create flame graphs on Linux systems.
+
+
+````
+# Sample CPU stack traces for the specified PID, at 99 Hertz, for 30 seconds:
+perf record -F 99 -p `pgrep -n node` -g -- sleep 30
+
+#
+perf script > /src/out.nodestacks01
+cd /src/FlameGraph
+./stackcollapse-perf.pl < ../out.nodestacks01 | ./flamegraph.pl --colors js > ../out.nodestacks01.svg
+````

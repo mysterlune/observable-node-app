@@ -4,6 +4,9 @@
 /dist
 /tmp
 
+# vendors
+/FlameGraph
+
 # dependencies
 /node_modules
 /bower_components
