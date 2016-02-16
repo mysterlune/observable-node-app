@@ -64,7 +64,11 @@ This post by [Brendan Gregg](http://www.brendangregg.com/blog/2014-09-17/node-fl
 # Sample CPU stack traces for the specified PID, at 99 Hertz, for 30 seconds:
 perf record -F 99 -p `pgrep -n node` -g -- sleep 30
 
-#
+# Grab the FlameGraph utilities
+git clone --depth 1 http://github.com/brendangregg/FlameGraph
+
+# The business of running the recorded stack output through the aptly named `script` to
+# produce a stack that `FlameGraph` can collapse to a graph
 perf script > /src/out.nodestacks01
 cd /src/FlameGraph
 ./stackcollapse-perf.pl < ../out.nodestacks01 | ./flamegraph.pl --colors js > ../out.nodestacks01.svg
