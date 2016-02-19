@@ -7,6 +7,8 @@ This project explores some of the techniques described by Brendan Gregg and Yuno
 
 So far, the document that follows is largely a scattershot of notes taken from watching [this video](http://techblog.netflix.com/2015/12/debugging-nodejs-in-production.html).
 
+Also, very [useful gist](https://gist.github.com/trevnorris/9616784) on the subject of recording perf events for a Node app.
+
 ##Introduction
 In development, observable NodeJS application development is pretty easy. Developers can `console` in the development environment and see where errors are happening.
 
