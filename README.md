@@ -1,5 +1,12 @@
 #Observable Runtime
 
+This project explores some of the techniques described by Brendan Gregg and Yunong Xiao of Netflix. The main thrust of this project currently is:
+
+* Provide an app that has some bad internal code
+* A facility for producing a Flame Graph to help represent bottlenecks in the runtime
+
+So far, the document that follows is largely a scattershot of notes taken from watching [this video](http://techblog.netflix.com/2015/12/debugging-nodejs-in-production.html).
+
 ##Introduction
 In development, observable NodeJS application development is pretty easy. Developers can `console` in the development environment and see where errors are happening.
 
@@ -59,6 +66,7 @@ Scoped Child Loggers: In the context of a given request, a UUID is decorated wit
 
 This post by [Brendan Gregg](http://www.brendangregg.com/blog/2014-09-17/node-flame-graphs-on-linux.html) helps create flame graphs on Linux systems.
 
+And the killer walkthrough by Yunong [on yunong.io](http://yunong.io/2015/11/23/generating-node-js-flame-graphs). A modified version of the script is below.
 
 ````
 # Sample CPU stack traces for the specified PID, at 99 Hertz, for 30 seconds:
