@@ -1,0 +1,15 @@
+version: '2'
+services:
+  observable-node-poc:
+    build: .
+    privileged: true
+    ports:
+     - "80:8080"
+    volumes:
+     - .:/src
+    depends_on:
+     - redis
+    environment:
+     - REDIS_URL=redis://redis:6379
+  redis:
+    image: redis

@@ -1,5 +1,5 @@
 {
-  "name": "observable_node_poc",
+  "name": "observable-node-poc",
   "version": "0.0.0",
   "description": "Proof of Concept for building observable runtimes with NodeJS",
   "main": "index.js",
@@ -9,7 +9,11 @@
   "author": "River Lune <mysterlune@gmail.com> (http://www.plainearth.com/)",
   "license": "ISC",
   "dependencies": {
+    "lodash": "^4.6.1",
+    "redis": "^2.5.3",
     "restify": "^4.0.3",
+    "restify-formatter-jsonapi": "^0.2.1",
+    "sprintf-js": "^1.0.3",
     "vasync": "^1.6.3"
   }
 }
